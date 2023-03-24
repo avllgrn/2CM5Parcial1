@@ -2,6 +2,12 @@
 using namespace std;
 
 int main(void){
-    cout << "Hello world!" << endl;
+	int a, b, c;
+    cout << "Ingresa a  ";
+    cin>>a;
+    cout << "Ingresa b  ";
+    cin>>b;
+    c=a+b;
+    cout<<a<<" + "<<b<<" = "<<c<<endl;
     return 0;
 }
