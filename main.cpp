@@ -9,9 +9,9 @@ int main(void){
     getline(cin,Cadena1);
     n=Cadena1.size();
 
-    for(i=0; i<n; i++){
+    for(i=n-1; i>=0; i--){
         if(Cadena1.at(i)!=' ')
-            Cadena2.push_back(Cadena1.at(i));
+            Cadena2.push_back(toupper(Cadena1.at(i)));
     }
 
     cout<<endl<<endl
