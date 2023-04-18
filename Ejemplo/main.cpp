@@ -1,58 +1,24 @@
 #include <iostream>
-#include <stdlib.h>
+#include "Punto.h"
 using namespace std;
 
-bool esNumero(char c){
-    return c>=48 && c<=57;
-}
-bool esMayuscula(char c){
-    return c>=65 && c<=90;
-}
-bool esMinuscula(char c){
-    return c>=97 && c<=122;
-}
-bool esLetra(char c){
-    return esMinuscula(c) || esMayuscula(c);
-}
-bool esCaracterEspecial(char c){
-    return !esLetra(c) && !esNumero(c);
-}
-
 int main(void){
-    string Cadena, CadenaSinEspacios, CadenaInvertida;
-    int i,nCadena,nInvertida;
-    bool respuesta=true;
+    Punto P, Q, R;
 
-    cout<<"Ingresa tu cadena ";
-    getline(cin,Cadena);
-    nCadena=Cadena.size();
+    //1.Pide dato(s)
+    cout<<"Ingresa las coordenadas de P"<<endl;
+    P.pideleAlUsuarioTusAtributos();
+    cout<<"Ingresa las coordenadas de Q"<<endl;
+    Q.pideleAlUsuarioTusAtributos();
 
-    for(i=0; i<nCadena; i++)
-        if(!esCaracterEspecial(Cadena.at(i)))
-            CadenaSinEspacios.push_back(toupper(Cadena.at(i)));
+    //2.Calcula formula(s)
+    R.modificaTuAtributoX(P.retornaTuAtributoX()+Q.retornaTuAtributoX());
+    R.modificaTuAtributoY(P.retornaTuAtributoY()+Q.retornaTuAtributoY());
 
-    for(i=nCadena-1; i>=0; i--)
-        if(!esCaracterEspecial(Cadena.at(i)))
-            CadenaInvertida.push_back(toupper(Cadena.at(i)));
-    nInvertida=CadenaInvertida.length();
-
-    for(i=0; i<nInvertida; i++)
-        if(CadenaSinEspacios.at(i) != CadenaInvertida.at(i)){
-            respuesta = false;
-            break;
-        }
-
-
-    cout<<endl<<endl
-        <<"Cadena: "<<Cadena<<endl
-        <<"CadenaSinEspacios: "<<CadenaSinEspacios<<endl
-        <<"CadenaInvertida  : "<<CadenaInvertida<<endl<<endl;
-
-    if(respuesta)
-        cout<< "Es palindromo =^)"<<endl;
-    else
-        cout<< "NO es palindromo =^("<<endl;
+    //3.Muestra resultado(s)
+    cout<<"P";P.muestraTusAtributos();cout<<endl;
+    cout<<"Q";Q.muestraTusAtributos();cout<<endl;
+    cout<<"R";R.muestraTusAtributos();cout<<endl;
 
     return 0;
 }
-
