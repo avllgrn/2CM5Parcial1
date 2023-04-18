@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void){
     Punto P1, P2;
-    double d;
+    double m;
 
     //1.Pide dato(s)
     cout<<"Ingresa las coordenadas de P1"<<endl;
@@ -14,15 +14,14 @@ int main(void){
     P2.pideleAlUsuarioTusAtributos();
 
     //2.Calcula formula(s)
-    d = sqrt(pow(P2.retornaTuAtributoY()-P1.retornaTuAtributoY(),2)
-             +
-             pow(P2.retornaTuAtributoX()-P1.retornaTuAtributoX(),2)
-             );
+    m = (P2.retornaTuAtributoY() - P1.retornaTuAtributoY())
+        /
+        (P2.retornaTuAtributoX() - P1.retornaTuAtributoX());
 
     //3.Muestra resultado(s)
     cout<<"P1";P1.muestraTusAtributos();cout<<endl;
     cout<<"P2";P2.muestraTusAtributos();cout<<endl;
-    cout<<"d = "<<d<<endl;
+    cout<<"m = "<<m<<endl;
 
     return 0;
 }
