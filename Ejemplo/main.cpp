@@ -1,27 +1,30 @@
 #include <iostream>
-#include <math.h>
-#include "Punto.h"
+#include "Complejo.h"
 using namespace std;
 
 int main(void){
-    Punto P1, P2;
-    double m;
+    Complejo C1, C2, C3;
 
     //1.Pide dato(s)
-    cout<<"Ingresa las coordenadas de P1"<<endl;
-    P1.pideleAlUsuarioTusAtributos();
-    cout<<"Ingresa las coordenadas de P2"<<endl;
-    P2.pideleAlUsuarioTusAtributos();
+    cout<<"Ingresa las coordenadas de C1"<<endl;
+    C1.pideleAlUsuarioTusAtributos();
+    cout<<"Ingresa las coordenadas de C2"<<endl;
+    C2.pideleAlUsuarioTusAtributos();
 
     //2.Calcula formula(s)
-    m = (P2.retornaTuAtributoY() - P1.retornaTuAtributoY())
-        /
-        (P2.retornaTuAtributoX() - P1.retornaTuAtributoX());
+    C3.modificaTuAtributoReal(C1.retornaTuAtributoReal()
+                              +
+                              C2.retornaTuAtributoReal()
+       );
+    C3.modificaTuAtributoImaginario(C1.retornaTuAtributoImaginario()
+                                    +
+                                    C2.retornaTuAtributoImaginario()
+       );
 
     //3.Muestra resultado(s)
-    cout<<"P1";P1.muestraTusAtributos();cout<<endl;
-    cout<<"P2";P2.muestraTusAtributos();cout<<endl;
-    cout<<"m = "<<m<<endl;
+    cout<<"C1 = ";C1.muestraTusAtributos();cout<<endl;
+    cout<<"C2 = ";C2.muestraTusAtributos();cout<<endl;
+    cout<<"C3 = ";C3.muestraTusAtributos();cout<<endl;
 
     return 0;
 }
