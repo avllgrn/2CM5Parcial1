@@ -2,7 +2,16 @@
 #include "Complejo.h"
 using namespace std;
 
+void sumaComplejos(void);
+
 int main(void){
+
+    sumaComplejos();
+
+    return 0;
+}
+
+void sumaComplejos(void){
     Complejo C1, C2, C3;
 
     //1.Pide dato(s)
@@ -25,6 +34,4 @@ int main(void){
     cout<<"C1 = ";C1.muestraTusAtributos();cout<<endl;
     cout<<"C2 = ";C2.muestraTusAtributos();cout<<endl;
     cout<<"C3 = ";C3.muestraTusAtributos();cout<<endl;
-
-    return 0;
 }
