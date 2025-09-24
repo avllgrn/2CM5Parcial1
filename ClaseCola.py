@@ -36,8 +36,8 @@ class Cola:
     
     def liberaMemoria(self):
         while not self.estaVacia():
-            # print(f'Se elimina {self.pop()}')
-            self.pop()
+            print(f'Se elimina {self.pop()}')
+            # self.pop()
 
 if __name__ == '__main__':
     system('cls')
